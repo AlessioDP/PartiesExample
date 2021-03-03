@@ -1,0 +1,6 @@
+name: PartiesExample
+description: Parties API usage example
+author: AlessioDP
+version: 1.0.0
+main: com.alessiodp.partiesexample.bungeecord.PartiesExample
+softdepend: [Parties]
