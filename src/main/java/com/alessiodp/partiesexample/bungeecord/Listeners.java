@@ -10,13 +10,17 @@ import com.alessiodp.parties.api.events.bungee.party.BungeePartiesPartyPreCreate
 import com.alessiodp.parties.api.events.bungee.party.BungeePartiesPartyPreDeleteEvent;
 import com.alessiodp.parties.api.events.bungee.party.BungeePartiesPartyPreRenameEvent;
 import com.alessiodp.parties.api.events.bungee.player.BungeePartiesPlayerPostChatEvent;
+import com.alessiodp.parties.api.events.bungee.player.BungeePartiesPlayerPostHomeEvent;
 import com.alessiodp.parties.api.events.bungee.player.BungeePartiesPlayerPostInviteEvent;
 import com.alessiodp.parties.api.events.bungee.player.BungeePartiesPlayerPostJoinEvent;
 import com.alessiodp.parties.api.events.bungee.player.BungeePartiesPlayerPostLeaveEvent;
+import com.alessiodp.parties.api.events.bungee.player.BungeePartiesPlayerPostTeleportEvent;
 import com.alessiodp.parties.api.events.bungee.player.BungeePartiesPlayerPreChatEvent;
+import com.alessiodp.parties.api.events.bungee.player.BungeePartiesPlayerPreHomeEvent;
 import com.alessiodp.parties.api.events.bungee.player.BungeePartiesPlayerPreInviteEvent;
 import com.alessiodp.parties.api.events.bungee.player.BungeePartiesPlayerPreJoinEvent;
 import com.alessiodp.parties.api.events.bungee.player.BungeePartiesPlayerPreLeaveEvent;
+import com.alessiodp.parties.api.events.bungee.player.BungeePartiesPlayerPreTeleportEvent;
 import com.alessiodp.parties.api.events.bungee.unique.BungeePartiesPartyFollowEvent;
 import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.event.EventHandler;
@@ -117,6 +121,26 @@ public class Listeners implements Listener {
 	@EventHandler
 	public void onPlayerChatPost(BungeePartiesPlayerPostChatEvent event) {
 		System.out.println("[PartiesExample] This event is called when a player sent a chat message");
+	}
+	
+	@EventHandler
+	public void onPlayerHomePre(BungeePartiesPlayerPreHomeEvent event) {
+		System.out.println("[PartiesExample] This event is called when a player is getting teleported with home command");
+	}
+	
+	@EventHandler
+	public void onPlayerHomePost(BungeePartiesPlayerPostHomeEvent event) {
+		System.out.println("[PartiesExample] This event is called when a player got teleported with home command");
+	}
+	
+	@EventHandler
+	public void onPlayerTeleportPre(BungeePartiesPlayerPreTeleportEvent event) {
+		System.out.println("[PartiesExample] This event is called when a player is getting teleported with teleport command");
+	}
+	
+	@EventHandler
+	public void onPlayerTeleportPost(BungeePartiesPlayerPostTeleportEvent event) {
+		System.out.println("[PartiesExample] This event is called when a player got teleported with teleport command");
 	}
 	
 	@EventHandler

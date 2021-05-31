@@ -10,13 +10,17 @@ import com.alessiodp.parties.api.events.bukkit.party.BukkitPartiesPartyPreCreate
 import com.alessiodp.parties.api.events.bukkit.party.BukkitPartiesPartyPreDeleteEvent;
 import com.alessiodp.parties.api.events.bukkit.party.BukkitPartiesPartyPreRenameEvent;
 import com.alessiodp.parties.api.events.bukkit.player.BukkitPartiesPlayerPostChatEvent;
+import com.alessiodp.parties.api.events.bukkit.player.BukkitPartiesPlayerPostHomeEvent;
 import com.alessiodp.parties.api.events.bukkit.player.BukkitPartiesPlayerPostInviteEvent;
 import com.alessiodp.parties.api.events.bukkit.player.BukkitPartiesPlayerPostJoinEvent;
 import com.alessiodp.parties.api.events.bukkit.player.BukkitPartiesPlayerPostLeaveEvent;
+import com.alessiodp.parties.api.events.bukkit.player.BukkitPartiesPlayerPostTeleportEvent;
 import com.alessiodp.parties.api.events.bukkit.player.BukkitPartiesPlayerPreChatEvent;
+import com.alessiodp.parties.api.events.bukkit.player.BukkitPartiesPlayerPreHomeEvent;
 import com.alessiodp.parties.api.events.bukkit.player.BukkitPartiesPlayerPreInviteEvent;
 import com.alessiodp.parties.api.events.bukkit.player.BukkitPartiesPlayerPreJoinEvent;
 import com.alessiodp.parties.api.events.bukkit.player.BukkitPartiesPlayerPreLeaveEvent;
+import com.alessiodp.parties.api.events.bukkit.player.BukkitPartiesPlayerPreTeleportEvent;
 import com.alessiodp.parties.api.events.bukkit.unique.BukkitPartiesCombustFriendlyFireBlockedEvent;
 import com.alessiodp.parties.api.events.bukkit.unique.BukkitPartiesFriendlyFireBlockedEvent;
 import com.alessiodp.parties.api.events.bukkit.unique.BukkitPartiesPotionsFriendlyFireBlockedEvent;
@@ -120,6 +124,26 @@ public class Listeners implements Listener {
 	@EventHandler
 	public void onPlayerChatPost(BukkitPartiesPlayerPostChatEvent event) {
 		System.out.println("[PartiesExample] This event is called when a player sent a chat message");
+	}
+	
+	@EventHandler
+	public void onPlayerHomePre(BukkitPartiesPlayerPreHomeEvent event) {
+		System.out.println("[PartiesExample] This event is called when a player is getting teleported with home command");
+	}
+	
+	@EventHandler
+	public void onPlayerHomePost(BukkitPartiesPlayerPostHomeEvent event) {
+		System.out.println("[PartiesExample] This event is called when a player got teleported with home command");
+	}
+	
+	@EventHandler
+	public void onPlayerTeleportPre(BukkitPartiesPlayerPreTeleportEvent event) {
+		System.out.println("[PartiesExample] This event is called when a player is getting teleported with teleport command");
+	}
+	
+	@EventHandler
+	public void onPlayerTeleportPost(BukkitPartiesPlayerPostTeleportEvent event) {
+		System.out.println("[PartiesExample] This event is called when a player got teleported with teleport command");
 	}
 	
 	@EventHandler
