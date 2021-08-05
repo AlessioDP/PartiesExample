@@ -42,7 +42,7 @@
 		<dependency>
 			<groupId>com.alessiodp.parties</groupId>
 			<artifactId>parties-api</artifactId>
-			<version>3.1.4</version>
+			<version>3.1.9</version>
 		</dependency>
 		<dependency>
 			<groupId>org.spigotmc</groupId>
